@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción al Torneo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inscripción al Torneo</h1>
+    <form id="registrationForm">
+        <label for="teamSize">Selecciona el tamaño del equipo:</label>
+        <select id="teamSize" name="teamSize">
+            <option value="1">1 jugador</option>
+            <option value="2">2 jugadores</option>
+            <option value="3">3 jugadores</option>
+            <option value="4">4 jugadores</option>
+        </select>
+        <br>
+        <button type="submit">Inscribirse</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const registrationForm = document.getElementById('registrationForm');
+
+            registrationForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const teamSizeSelect = document.getElementById('teamSize');
+                const selectedTeamSize = teamSizeSelect.value;
+
+                alert('Te has inscrito al torneo con un equipo de ' + selectedTeamSize + ' jugadores.');
+            });
+        });
+    </script>
+</body>
+</html>
